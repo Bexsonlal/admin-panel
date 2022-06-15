@@ -1,0 +1,57 @@
+{
+  "posts": [
+    {
+      "DepartmentName": "Human Resource",
+      "DepartmentCode": "2",
+      "id": 1
+    },
+    {
+      "DepartmentName": "Finance",
+      "DepartmentCode": "2",
+      "id": 2
+    },
+    {
+      "DepartmentName": "Sales Dept",
+      "DepartmentCode": "022",
+      "id": 3
+    }
+  ],
+  "post": [
+    {
+      "EmployeeId": "1",
+      "FirstName": "Marnus",
+      "LastName": "Labushagne",
+      "Email": "marnie@gmail.com",
+      "MobileNo": "68743246546",
+      "Salary": "464613",
+      "id": 1
+    },
+    {
+      "EmployeeId": "2",
+      "FirstName": "Tim",
+      "LastName": "David",
+      "Email": "tim@gmail.com",
+      "MobileNo": "6765313368",
+      "Salary": "3452345",
+      "id": 2
+    },
+    {
+      "EmployeeId": "3",
+      "FirstName": "Nathan",
+      "LastName": "Bracken",
+      "Email": "nathan@gmail.com",
+      "MobileNo": "769877098",
+      "Salary": "786870",
+      "id": 3
+    },
+    {
+      "EmployeeId": "4",
+      "FirstName": "Glenn",
+      "LastName": "McGrath",
+      "Email": "glenn@gmail.com",
+      "MobileNo": "56543633456",
+      "Salary": "356345",
+      "id": 4
+    }
+  ]
+}

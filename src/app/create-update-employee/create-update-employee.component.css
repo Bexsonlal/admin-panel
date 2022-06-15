@@ -1,7 +1,3 @@
-@import "../home/home.component.scss";
-
-
-
 table {
     width: 100%;
   }
@@ -12,9 +8,9 @@ table {
   }
   
   td, th {
-    width: 25%;
+    
   }
   .container{
-    max-width: 1200px;
+    max-width: 2000px;
     margin: 0 auto;
   }

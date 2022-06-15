@@ -1,0 +1,32 @@
+.example-spacer {
+    flex: 1 1 auto;
+    width: 100;
+    
+  }
+
+  .att{
+      width: 150px;
+      height: 50px;
+  }
+  table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+  .container{
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+  button{
+      margin-left:20px ;
+  }
+
+
+  

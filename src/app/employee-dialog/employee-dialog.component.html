@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>Add Employee Form</h1>
+<form [formGroup]="EmployeeForm">
+    <div mat-dialog-content>
+        <mat-form-field appearance="outline">
+            <mat-label>Employee Id</mat-label>
+            <input formControlName="employeeId" matInput placeholder="employeeid">
+            
+          </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input formControlName="employeeFirstName" matInput placeholder="firstname">
+            
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input formControlName="employeeLastName" matInput  placeholder="lastname">
+
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Designation</mat-label>
+            <input formControlName="designation" matInput  placeholder="designation">
+            
+            
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Salary</mat-label>
+            <input formControlName="salary" matInput  placeholder="salary">
+
+            
+            
+          </mat-form-field>
+          
+    </div>
+</form>
+<div mat-dialog-action [align]="'end'">
+<button mat-raised-button color="warn" mat-dialog-close>Close</button>
+<button style="margin-left: 8px;"mat-raised-button color="primary" (click)="addEmployee()">{{actionBtn}}</button>
+</div>

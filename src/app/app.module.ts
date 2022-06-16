@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreateDepartmentComponent } from './create-department/create-department.component';
 import { CreateUpdateDepartmentComponent } from './create-update-department/create-update-department.component';
 import { MarkAttendanceComponent } from './mark-attendance/mark-attendance.component';
-import { LoginComponent } from './login/login.component';
+
 
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
@@ -40,7 +40,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EmployeeDialogComponent,
     CreateUpdateEmployeeComponent,
     MarkAttendanceComponent,
-    LoginComponent
+
   ],
   imports: [
     

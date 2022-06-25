@@ -13,7 +13,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class CreateUpdateDepartmentComponent implements OnInit {
 
-  displayedColumns: string[] = ['departmentName', 'departmentId','action'];
+  displayedColumns: string[] = ['departmentId','departmentCode','departmentName', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

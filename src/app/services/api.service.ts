@@ -17,28 +17,30 @@ export class ApiService
   getDepartment():Observable<any>{
     return this.http.get<any>("https://localhost:5001/api/Department/GetAllDepartments");
   }
-  putDepartment(data:any,id:number):Observable<any>{
-    return this.http.put<any>("https://localhost:5001/api/Department/GetDepartmentById/id"+id,data);
-  }
+
+  // putDepartment(data:any,id:number):Observable<any>{
+  //   return this.http.put<any>("https://localhost:5001/api/Department/GetDepartmentById/id"+id,data);
+  // }
+
   deleteDepartment(id: number): Observable<any> {
     
-    return this.http.delete<any>("https://localhost:5001/api/Department/DeleteDepartment"+id);
+    return this.http.delete<any>("https://localhost:5001/api/Department/DeleteDepartment?id="+id);
   }
 
 
-
+//create and save with same api, based on employee Id
   postEmployee(data: any):Observable<any>{
     return this.http.post<any>("https://localhost:5001/apiEmployee/SaveEmployees",data);
   }
   getEmployee():Observable<any>{
     return this.http.get<any>("https://localhost:5001/apiEmployee/GetAllEmployees");
   }
-  putEmployee(data:any,id:number):Observable<any>{
-    return this.http.put<any>("https://localhost:5001/apiEmployee/GetEmployeesById/id"+id,data);
-  }
+  // putEmployee(data:any,id:number):Observable<any>{
+  //   return this.http.put<any>("https://localhost:5001/apiEmployee/GetEmployeesById/id"+id,data);
+  // }
   
   deleteEmployee(id: number): Observable<any> {
-    return this.http.delete<any>("https://localhost:5001/apiEmployee/DeleteEmployee"+id);
+    return this.http.delete<any>("https://localhost:5001/apiEmployee/DeleteEmployee?id="+id);
   }
 
 

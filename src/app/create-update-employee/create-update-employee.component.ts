@@ -66,8 +66,8 @@ export class CreateUpdateEmployeeComponent implements OnInit {
       }
     })
   }
-  deleteEmployee(id:number){
-this.api.deleteEmployee(id)
+  deleteEmployee(row:any){
+this.api.deleteEmployee(row.employeeId)
 .subscribe({
   next:(res)=>{
     alert("Employee Deleted Successfully")

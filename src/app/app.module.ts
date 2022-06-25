@@ -28,6 +28,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { EmployeeDialogComponent } from './employee-dialog/employee-dialog.component';
 import { CreateUpdateEmployeeComponent } from './create-update-employee/create-update-employee.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete'
 
 @NgModule({
   declarations: [
@@ -43,8 +44,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
   ],
   imports: [
-    
-    
     MatDialogModule,
     MatInputModule,
     MatSortModule,
@@ -65,7 +64,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatDividerModule,
     MatListModule,
-
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent],

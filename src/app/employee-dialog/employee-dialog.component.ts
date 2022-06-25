@@ -3,6 +3,10 @@ import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+
+
 @Component({
   selector: 'app-employee-dialog',
   templateUrl: './employee-dialog.component.html',
@@ -11,7 +15,9 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class EmployeeDialogComponent implements OnInit {
 
   EmployeeForm !: FormGroup;
-actionBtn : string="Save"
+  actionBtn : string="Save" 
+ 
+  
   constructor(private formBuilder:FormBuilder, 
     @Inject(MAT_DIALOG_DATA) public editData : any,
         private api :ApiService,
@@ -21,26 +27,31 @@ actionBtn : string="Save"
 
   ngOnInit(): void {
     this.EmployeeForm=this.formBuilder.group({
-      employeeId : ['',Validators.required],
+      employeeId : [''],
       employeeFirstName : ['',Validators.required],
-      employeeLastName : ['',Validators.required],
+      employeeLastName : ['',Validators.required],    
+     // department : ['',Validators.required],
       designation : ['',Validators.required],
       salary : ['',Validators.required]
     })
+
+
     if(this.editData){
       this.actionBtn="Update";
-      this.EmployeeForm.controls['EmployeeId'].setValue(this.editData.EmployeeId);
-      this.EmployeeForm.controls['FirstName'].setValue(this.editData.EmployeeFirstName);
-      this.EmployeeForm.controls['LastName'].setValue(this.editData.EmployeeLastName);
-      this.EmployeeForm.controls['Designation'].setValue(this.editData.Designation)
-      this.EmployeeForm.controls['Salary'].setValue(this.editData.Salary);
+      //Do we need to update this with Patch Value ? check ?
+      this.EmployeeForm.controls['employeeId'].setValue(this.editData.employeeId);
+      this.EmployeeForm.controls['employeeFirstName'].setValue(this.editData.employeeFirstName);
+      this.EmployeeForm.controls['employeeLastName'].setValue(this.editData.employeeLastName);
+      this.EmployeeForm.controls['designation'].setValue(this.editData.designation)
+      this.EmployeeForm.controls['salary'].setValue(this.editData.salary);
     }
-  }
+  } 
   
   addEmployee(){
     if(!this.editData){
       if(this.EmployeeForm.valid) {
-      
+        //remove id field for create process
+        this.EmployeeForm.removeControl('employeeId');
         this.api.postEmployee(this.EmployeeForm.value)
       .subscribe({
         next:(res)=>{
@@ -60,7 +71,7 @@ actionBtn : string="Save"
   }
   updateEmployee(){
   
-  this.api.putEmployee(this.EmployeeForm.value,this.editData.id)
+  this.api.postEmployee(this.EmployeeForm.value)
 .subscribe({
   next:(res)=>{
     alert("Employee updated successfully");
